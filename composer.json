@@ -12,15 +12,14 @@
   "license": "MIT",
   "require": {
     "php": ">=8.0",
-    "doctrine/annotations": "^1.4",
-    "symfony/framework-bundle": "^3.4 || ^4.0 || ^5.0 || ^6.0",
-    "symfony/options-resolver": "^3.4 || ^4.0 || ^5.0 || ^6.0",
-    "symfony/property-access": "^3.4 || ^4.0 || ^5.0 || ^6.0",
-    "symfony/serializer": "^3.4 || ^4.0 || ^5.0|| ^6.0"
+    "doctrine/annotations": "^2.0",
+    "symfony/framework-bundle": "^3.4 || ^4.0 || ^5.0 || ^6.0 || ^7.0",
+    "symfony/options-resolver": "^3.4 || ^4.0 || ^5.0 || ^6.0 || ^7.0",
+    "symfony/property-access": "^3.4 || ^4.0 || ^5.0 || ^6.0 || ^7.0",
+    "symfony/serializer": "^3.4 || ^4.0 || ^5.0|| ^6.0 || ^7.0"
   },
   "require-dev": {
-    "doctrine/collections": "^1.5",
-    "friendsofphp/php-cs-fixer": "^2.16",
+    "doctrine/collections": "^2.0",
     "phpunit/phpunit": "^8.0",
     "roave/security-advisories": "dev-master"
   },
