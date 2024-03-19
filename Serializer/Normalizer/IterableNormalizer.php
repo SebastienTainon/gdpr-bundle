@@ -29,7 +29,7 @@ class IterableNormalizer implements NormalizerInterface, NormalizerAwareInterfac
     /**
      * {@inheritdoc}
      */
-    public function supportsNormalization($data, $format = null)
+    public function supportsNormalization(mixed $data, ?string $format = null, array $context = []): bool
     {
         if (is_array($data) || $data instanceof \Traversable) {
             return true;
@@ -38,10 +38,15 @@ class IterableNormalizer implements NormalizerInterface, NormalizerAwareInterfac
         return false;
     }
 
+    public function getSupportedTypes(?string $format): array
+    {
+        return ['*' => true];
+    }
+
     /**
      * {@inheritdoc}
      */
-    public function normalize($object, $format = null, array $context = [])
+    public function normalize($object, $format = null, array $context = []): array|string|int|float|bool|\ArrayObject|null
     {
         $normalizedData = [];
 

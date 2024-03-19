@@ -79,7 +79,7 @@ class AnnotationNormalizer implements NormalizerInterface, NormalizerAwareInterf
      *
      * @throws \ReflectionException
      */
-    public function supportsNormalization($data, $format = null)
+    public function supportsNormalization(mixed $data, ?string $format = null, array $context = []): bool
     {
         if (is_object($data) === false) {
             return false;
@@ -93,6 +93,11 @@ class AnnotationNormalizer implements NormalizerInterface, NormalizerAwareInterf
         return count($propertyAnnotations) > 0;
     }
 
+    public function getSupportedTypes(?string $format): array
+    {
+        return ['object' => true];
+    }
+
     /**
      * Normalizes an object into a set of arrays/scalars.
      *
@@ -104,7 +109,7 @@ class AnnotationNormalizer implements NormalizerInterface, NormalizerAwareInterf
      *
      * @throws \ReflectionException
      */
-    public function normalize($object, $format = null, array $context = [])
+    public function normalize($object, $format = null, array $context = []): array|string|int|float|bool|\ArrayObject|null
     {
         $normalizedData = [];
         $propertyAnnotations = $this->annotationReader->getPropertiesWithAnnotation(
